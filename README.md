@@ -44,7 +44,7 @@ The following resources will need to be included in the application, in order to
 
 ### jQuery API
 
-```
+```javascript
 // Call Component Method
 $(componentElement).ui.myMethod(args);
 
