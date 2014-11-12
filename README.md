@@ -1,9 +1,6 @@
 Signal UI
 =========
 
-What we're trying to build
---------------------------
-
 This repository should:
 
 - Allow UI components and generic styles to easily be included in the all three of the applications.
