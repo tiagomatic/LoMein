@@ -1,0 +1,13 @@
+form
+  each input in inputs
+    - var id = generateId()
+
+    .row
+      label(for=id) #{label}
+
+      if type == 'textarea'
+        textarea(id=id name=name)
+      else if type == 'select'
+        select(id=id name=name)
+      else if ['text', 'email', 'tel'].indexOf(type) !== -1
+        input(id=id type=type name=name)

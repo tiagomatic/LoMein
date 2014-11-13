@@ -43,13 +43,13 @@ The following resources will need to be included in the application, in order to
 
 ```javascript
 // Call Component Method
-$(componentElement).ui.myMethod(args);
+$(componentElement).UI.myMethod(args);
 
 // Trigger Component Event
-$(componentElement).ui.trigger('open');
+$(componentElement).UI.trigger('open');
 
 // Bind Component Event
-$(componentElement).ui.bind('open', function() {
+$(componentElement).UI.bind('open', function() {
 
 });
 ```
@@ -73,3 +73,10 @@ A style sheet will be generated to provide basic styles generic HTML elements.  
 - `headings.scss`
 - `docs.md` - The documentation for the component, which will be used to build the style guide website.
 
+Development
+-----------
+
+```bash
+gulp watch
+npm install
+```
