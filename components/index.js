@@ -1,4 +1,3 @@
 module.exports = {
-  form: require('./form'),
-  grid: require('./grid')
+  form: require('./form')
 };
