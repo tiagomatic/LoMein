@@ -1,26 +1,34 @@
 var gulp    = require('gulp'),
-    sass    = require('gulp-sass'),
+    rsass   = require('gulp-ruby-sass'),
     util    = require('gulp-util'),
     watch   = require('gulp-watch'),
     concat  = require('gulp-concat-util'),
     browserify = require('gulp-browserify');
 
+var paths = {
+  scss: './components/**/index.scss',
+  js: './SignalUI.js'
+}
+
 gulp.task('css', function() {
-  gulp.src('./components/**/index.scss')
-    .pipe(sass({
-      errLogToConsole: true
+  return gulp.src( paths.scss )
+    .pipe(rsass({
+      trace: false,
+      sourcemapPath: './',
+      bundleExec: true,
+      require: ['bourbon', 'susy', 'modular-scale'],
     }))
-    .pipe(concat('SignalUI.css'))
-    .pipe(gulp.dest('./build'));
+    .pipe( concat('SignalUI.css') )
+    .pipe( gulp.dest('./build') );
 });
 
 gulp.task('js', function() {
-  gulp.src('./SignalUI.js')
+  return gulp.src( paths.js )
     .pipe(browserify({
       insertGlobals: true,
       debug: true
     }))
-    .pipe(gulp.dest('./build'));
+    .pipe( gulp.dest('./build') );
 });
 
 gulp.task('docs', function() {
