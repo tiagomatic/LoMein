@@ -1,5 +1,6 @@
-'use strict';
+var gulp = require('gulp');
 
-global.isProd = false;
+require('./tasks/css');
+require('./tasks/js');
 
-require('./gulp');
+gulp.task('default', ['css', 'js']);
