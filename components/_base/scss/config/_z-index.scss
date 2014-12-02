@@ -1,0 +1,9 @@
+// Global stacking order
+$z-layers: (
+  'abyss': -10000,
+  'below': -1,
+  'default': 1,
+  'top-bar': 99,
+  'overlay': 8000,
+  'modal': 9000
+);

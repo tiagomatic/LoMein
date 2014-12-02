@@ -1,0 +1,9 @@
+// base em size for the px-to-em and px-to-rem function
+$em-base: $base-font-size;
+
+// vendor prefixes are handled by autoprefixer
+$prefix-for-webkit:    false;
+$prefix-for-mozilla:   false;
+$prefix-for-microsoft: false;
+$prefix-for-opera:     false;
+$prefix-for-spec:      false;

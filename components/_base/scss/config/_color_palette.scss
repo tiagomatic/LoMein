@@ -1,0 +1,44 @@
+// Color palette
+// See http://bensmithett.com/stop-using-so-many-sass-variables/
+// See https://www.google.com/design/spec/style/color.html#color-ui-color-application
+
+$c-blue-500: rgb(0, 0, 100, 1);
+$c-red-500: rgb(100, 0, 0, 1);
+
+$c-primary: $blue-500;
+$c-primary-accent: $pink-500;
+
+// @todo mixin to generate palettes
+// @mixin create-palette( $c-name, $c-primary ){
+//   @for ( $i from 6 through 9 ) {
+//     %#{c-name}-#{i}+100 {
+//       color: darken( $c-primary, 10% );
+//     }
+//   }
+// }
+
+// Cool
+
+$aqua:  #7FDBFF;
+$blue:  #0074D9;
+$navy:  #001F3F;
+$teal:  #39CCCC;
+$green: #2ECC40;
+$olive: #3D9970;
+$lime:  #01FF70;
+
+// Warm
+
+$yellow:  #FFDC00;
+$orange:  #FF851B;
+$red:     #FF4136;
+$fuchsia: #F012BE;
+$purple:  #B10DC9;
+$maroon:  #85144B;
+
+// Gray Scale
+
+$white:  #fff;
+$silver: #ddd;
+$gray:   #aaa;
+$black:  #111;
