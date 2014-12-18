@@ -1,7 +1,16 @@
+header {
+  background: #555555; }
+  header h1 {
+    line-height: 70px;
+    margin: 0;
+    padding: 0 15px; }
+    header h1 a {
+      color: #FFF;
+      text-decoration: none; }
+
 aside {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 70px;
   left: 0;
   width: 260px;
   background: #82ACC1; }
@@ -24,7 +33,7 @@ aside {
 article {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 70px;
   bottom: 0;
   left: 260px;
   padding: 1em; }
