@@ -1,0 +1,173 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><!-- Scripts--><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="/signal-ui.min.js"></script><!-- Typekit--><script src="//use.typekit.net/xsv6ecp.js"></script><script>try{Typekit.load();}catch(e){}</script><link rel="stylesheet" type="text/css" href="/SignalUI.css"><link rel="stylesheet" type="text/css" href="/main.css"><title>Signal UI</title></head><body><h1>Drop-Down</h1>
+
+<h2>Configuration</h2>
+
+<p>TODO</p>
+
+<h2>Broadcast Events</h2>
+
+<p>When component state changes, events will be emitted on the outermost component element. These may be listened for and acted upon.</p>
+
+<p>Most events are paired with a "will" event that occurs just before state changes and a "did" event that occurs just after state changes.</p>
+
+<p>To listen for a broadcast event, use the following pattern:</p>
+
+<p><code>js
+component.addEventListener('eventName', function (e) {
+  // access e.details here
+});
+</code></p>
+
+<p><code>eventName</code> corresponds to a valid broadcast event.</p>
+
+<p><code>e.details</code> is an object that contains <code>component</code> (the outermost element of the component that fired the event) and potentially other data relevant to the state change.</p>
+
+<h3>dropDownWillBuild</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component that will be built</p>
+
+<h4>info</h4>
+
+<p>emitted when the component is about to be built</p>
+
+<h3>dropDownDidBuild</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component that was built</p>
+
+<h4>info</h4>
+
+<p>emitted when the component is built</p>
+
+<h3>dropDownWillEnhance</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component that will be enhanced</p>
+
+<h4>info</h4>
+
+<p>emitted when the component is about to be enhanced</p>
+
+<h3>dropDownDidEnhance</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component that was enhanced</p>
+
+<h4>info</h4>
+
+<p>emitted when the component is enhanced</p>
+
+<h3>dropDownWillShow</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component whose menu will be shown</p>
+
+<h4>info</h4>
+
+<p>emitted when the component's menu is about to be shown</p>
+
+<h3>dropDownDidShow</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component whose menu was shown</p>
+
+<h4>info</h4>
+
+<p>emitted when the component's menu is shown</p>
+
+<h3>dropDownWillHide</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component whose menu will be hidden</p>
+
+<h4>info</h4>
+
+<p>emitted when the component's menu is about to be hidden</p>
+
+<h3>dropDownDidHide</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component whose menu was hidden</p>
+
+<h4>info</h4>
+
+<p>emitted when the component's menu is hidden</p>
+
+<h3>dropDownDidSelect</h3>
+
+<h4>event.detail</h4>
+
+<p><strong>component</strong> - the outermost element of the component whose menu was hidden</p>
+
+<p><strong>selected</strong> - the component's menu item element that was selected</p>
+
+<h4>info</h4>
+
+<p>emitted when one of the component's menu items is selected</p>
+
+<h4>event.detail</h4>
+
+<h2>API Events</h2>
+
+<p>To trigger UI behaviors in the drop-down component, dispatch one of these custom events on the component itself.</p>
+
+<p>To create and dispatch a custom event, use the following pattern:</p>
+
+<p><code>js
+var apiEvent = new window.CustomEvent(
+  'eventName',
+  {
+    'detail': eventData
+  }
+);
+component.dispatchEvent(apiEvent);
+</code></p>
+
+<p><code>eventName</code> corresponds to a valid API event.</p>
+
+<p><code>eventData</code> is an object containing data relevent to the event.</p>
+
+<p>The second argument to CustomEvent may be omitted entirely in cases where no additional information is needed beyond the API directive.</p>
+
+<h3>dropDownShow</h3>
+
+<p>Tells the drop-down to show its menu if it isn't already shown.</p>
+
+<p><code>js
+var dropDownShowEvent = new window.CustomEvent('dropDownShow');
+component.dispatchEvent(dropDownShowEvent);
+</code></p>
+
+<h3>dropDownHide</h3>
+
+<p>Tells the drop-down to hide its menu if it isn't already hidden.</p>
+
+<p><code>js
+var dropDownHideEvent = new window.CustomEvent('dropDownHide');
+component.dispatchEvent(dropDownHideEvent);
+</code></p>
+
+<h3>dropDownSelect</h3>
+
+<p>Tells the drop-down to select the specified option. Works even if the drop=down's menu is hidden.</p>
+
+<p><code>js
+var dropDownSelectEvent = new window.CustomEvent(
+  'dropDownSelect',
+  {
+    'detail': {
+      'select': 'Text Of Option'
+    }
+  }
+);
+component.dispatchEvent(dropDownSelectEvent);
+</code></p></body></html>
