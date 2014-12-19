@@ -39,8 +39,6 @@ $(function() {
       $headings   = $('h2[id]'),
       $asideLinks = $('aside a');
 
-  console.log(path);
-
   if(path === '/') {
     var onScroll = function() {
       // Get the current heading
@@ -66,7 +64,7 @@ $(function() {
     onScroll();
   }
   else {
-    var regex = new RegExp('^[^#].*'+path+'?$');
+    var regex = new RegExp(path+'?$');
 
     $('aside a').each(function() {
       var $this = $(this),
