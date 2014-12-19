@@ -1,0 +1,15 @@
+@import "../settings.scss";
+
+
+.checkbox-label {
+	input {
+		margin-right: 5px;
+		&:checked + .label-text {
+			color: $signal-blue;
+		}
+	}
+	.label-text {
+		text-transform: uppercase;
+		font-size: 12px;
+	}
+}

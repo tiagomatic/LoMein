@@ -7,6 +7,8 @@ module.exports = {
     'input',
     'list',
     'textarea',
-    'colorswatches'
+    'colorswatches',
+    'checkboxes',
+    'radiobuttons'
   ]
 };

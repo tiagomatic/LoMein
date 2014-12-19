@@ -1,0 +1,15 @@
+@import "../settings.scss";
+
+input[type="radio"] + label {
+	text-transform: uppercase;
+	margin: 12px;
+	font-size: 12px;
+}
+
+input[type="radio"]:disabled + label {
+	color: $grey;
+}
+
+input[type="radio"]:checked + label {
+	color: $signal-blue;
+}
