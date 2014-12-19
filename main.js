@@ -56,7 +56,7 @@ $(function() {
 
       // Highlight the link
       $asideLinks.removeClass('active');
-      $('aside a[href="#'+hash+'"]').addClass('active');
+      $('aside a[href$="#'+hash+'"]').addClass('active');
     };
 
     $window.scroll(onScroll);
@@ -66,13 +66,9 @@ $(function() {
   else {
     var regex = new RegExp(path+'?$');
 
-    console.log(regex);
-
     $('aside a').each(function() {
       var $this = $(this),
           href  = $this.attr('href');
-
-      console.log(href);
 
       if(regex.test(href)) {
         $this.addClass('active');
