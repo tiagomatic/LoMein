@@ -44,3 +44,6 @@ article {
   bottom: 0;
   left: 260px;
   padding: 15px 20px; }
+  article pre {
+    white-space: pre-wrap;
+    font-size: 0.9em; }
