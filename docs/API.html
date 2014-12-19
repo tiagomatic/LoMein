@@ -1,8 +1,234 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><!-- Scripts--><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="../signal-ui.min.js"></script><script src="../main.js"></script><!-- Typekit--><script src="//use.typekit.net/xsv6ecp.js"></script><script>try{Typekit.load();}catch(e){}</script><link rel="stylesheet" type="text/css" href="../SignalUI.css"><link rel="stylesheet" type="text/css" href="../main.css"><title>Signal UI</title></head><body><header> <h1> <a href="../">Signal UI</a></h1></header><aside><h4>Styles</h4><ul><a href="../#Paragraphs"><li>Paragraphs</li></a><a href="../#Headings"><li>Headings</li></a><a href="../#Cards"><li>Cards</li></a><a href="../#Tags"><li>Tags</li></a><a href="../#Button"><li>Button</li></a><a href="../#Inputs"><li>Inputs</li></a><a href="../#Lists"><li>Lists</li></a></ul><h4>Documentation</h4><ul><a href="../docs/implementation"> <li>Using Components</li></a><a href="../docs/API"> <li>Component API</li></a></ul><h4>Examples</h4><ul><a href="../examples/doc1"> <li>Document 1</li></a><a href="../examples/doc2"> <li>Document 2</li></a><a href="../examples/doc3"> <li>Document 3</li></a></ul></aside><article><h1>Drop-Down</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><!-- Scripts--><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="../signal-ui.min.js"></script><script src="../main.js"></script><!-- Typekit--><script src="//use.typekit.net/xsv6ecp.js"></script><script>try{Typekit.load();}catch(e){}</script><link rel="stylesheet" type="text/css" href="../SignalUI.css"><link rel="stylesheet" type="text/css" href="../components.min.css"><link rel="stylesheet" type="text/css" href="../main.css"><title>Signal UI</title></head><body><header> <h1> <a href="../">Signal UI</a></h1></header><aside><h5>Styles</h5><ul><a href="../#Paragraphs"><li>Paragraphs</li></a><a href="../#Headings"><li>Headings</li></a><a href="../#Button"><li>Button</li></a><a href="../#Inputs"><li>Inputs</li></a><a href="../#Lists"><li>Lists</li></a><a href="../#AJAX-Loaders"><li>AJAX Loaders</li></a><a href="../#Colors"><li>Colors</li></a></ul><h5>Components</h5><ul><a href="../#dropdown"><li>Dropdown</li></a></ul><h5>Documentation</h5><ul><a href="../docs/implementation"> <li>Using Components</li></a><a href="../docs/API"> <li>Component API</li></a></ul><h5>Examples</h5><ul><a href="../examples/doc1"> <li>Document 1</li></a><a href="../examples/doc2"> <li>Document 2</li></a><a href="../examples/doc3"> <li>Document 3</li></a></ul></aside><article><h1>Drop-Down</h1>
 
 <h2>Configuration</h2>
 
-<p>TODO</p>
+<p>Drop down menus require data in the following format:</p>
+
+<h3><code>uniqueIdentifier</code></h3>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>Unique id attribute for the self-initialization script. This is to ensure that
+components added via AJAX do not initiate the wrong component.</p>
+
+<h3><code>id</code></h3>
+
+<blockquote>
+  <p><em>optional</em></p>
+  
+  <p><em>string</em></p>
+  
+  <p><em>default: null</em></p>
+</blockquote>
+
+<p>Optional id attribute for the component.</p>
+
+<h3><code>class</code></h3>
+
+<blockquote>
+  <p><em>optional</em></p>
+  
+  <p><em>string</em></p>
+  
+  <p><em>default: null</em></p>
+</blockquote>
+
+<p>Optional class attribute for the component.</p>
+
+<h3><code>build</code></h3>
+
+<blockquote>
+  <p><em>optional</em></p>
+  
+  <p><em>boolean</em></p>
+  
+  <p><em>default: false</em></p>
+</blockquote>
+
+<p>Set to true for server-side pre-building of components.</p>
+
+<h3><code>select</code></h3>
+
+<blockquote>
+  <p><em>optional - must use select or menu</em></p>
+  
+  <p><em>object</em></p>
+  
+  <p><em>default: null</em></p>
+</blockquote>
+
+<p>Object containing information regarding a select on top of which the drop-down
+component is based. <code>select</code> data is as follows:</p>
+
+<h4><code>selectId</code></h4>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>The id attribute of the select.</p>
+
+<h4><code>selectName</code></h4>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>The name attribute of the select.</p>
+
+<h4><code>hideCurrent</code></h4>
+
+<blockquote>
+  <p><em>optional</em></p>
+  
+  <p><em>boolean</em></p>
+  
+  <p><em>default: false</em></p>
+</blockquote>
+
+<p>Set to true to prevent the currently selected option from appearing in the
+drop-down menu.</p>
+
+<h4><code>menuItems</code></h4>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>array of objects</em></p>
+</blockquote>
+
+<p>Array representing each option in the select. <code>menuItem</code> objects each contain
+the following:</p>
+
+<h5><code>text</code></h5>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>Text label for the option.</p>
+
+<h5><code>value</code></h5>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>The value attribute of the option.</p>
+
+<h5><code>isCurrent</code></h5>
+
+<blockquote>
+  <p><em>optional - should only be set for one option</em></p>
+  
+  <p><em>boolean</em></p>
+  
+  <p><em>default: false</em></p>
+</blockquote>
+
+<p>Adds the selected attribute to the option.</p>
+
+<h3><code>flushDirection</code></h3>
+
+<blockquote>
+  <p><em>optional - ignored by <code>select</code></em></p>
+  
+  <p><em>string: 'left', 'right', or 'both'</em></p>
+  
+  <p><em>default: 'both'</em></p>
+</blockquote>
+
+<p>Specifies whether the menu and button's left, right, or both edges will be flush.</p>
+
+<h3><code>triggerText</code></h3>
+
+<blockquote>
+  <p><em>required for <code>menu</code> - ignored by <code>select</code></em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>The text for the trigger that shows the menu.</p>
+
+<h3><code>triggerId</code></h3>
+
+<blockquote>
+  <p><em>optional - ignored by <code>select</code></em></p>
+  
+  <p><em>string</em></p>
+  
+  <p><em>default: ''</em></p>
+</blockquote>
+
+<p>Optional id attribute for the trigger.</p>
+
+<h3><code>menu</code></h3>
+
+<blockquote>
+  <p><em>optional - must use select or menu</em></p>
+  
+  <p><em>object</em></p>
+  
+  <p><em>default: null</em></p>
+</blockquote>
+
+<p>Object containing information regarding an unordered list on top of which the
+drop-down component is based. <code>menu</code> data is as follows:</p>
+
+<h4><code>menuItems</code></h4>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>array of objects</em></p>
+</blockquote>
+
+<p>Array representing each option in the select. <code>menuItem</code> objects each contain
+the following:</p>
+
+<h5><code>menuItemId</code></h5>
+
+<blockquote>
+  <p><em>optional</em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>Optional id attribute for the menu item.</p>
+
+<h5><code>text</code></h5>
+
+<blockquote>
+  <p><em>required</em></p>
+  
+  <p><em>string</em></p>
+</blockquote>
+
+<p>Text for the menu item.</p>
+
+<h5><code>link</code></h5>
+
+<blockquote>
+  <p><em>optional</em></p>
+  
+  <p><em>string</em></p>
+  
+  <p><em>default: 'javascript:;'</em></p>
+</blockquote>
+
+<p>The href attribute of the menu item.</p>
 
 <h2>Broadcast Events</h2>
 
@@ -22,99 +248,81 @@ component.addEventListener('eventName', function (e) {
 
 <p><code>e.details</code> is an object that contains <code>component</code> (the outermost element of the component that fired the event) and potentially other data relevant to the state change.</p>
 
-<h3>dropDownWillBuild</h3>
+<h3><code>dropDownWillBuild</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component that will be built</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component that will be built</p>
 
 <p>emitted when the component is about to be built</p>
 
-<h3>dropDownDidBuild</h3>
+<h3><code>dropDownDidBuild</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component that was built</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component that was built</p>
 
 <p>emitted when the component is built</p>
 
-<h3>dropDownWillEnhance</h3>
+<h3><code>dropDownWillEnhance</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component that will be enhanced</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component that will be enhanced</p>
 
 <p>emitted when the component is about to be enhanced</p>
 
-<h3>dropDownDidEnhance</h3>
+<h3><code>dropDownDidEnhance</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component that was enhanced</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component that was enhanced</p>
 
 <p>emitted when the component is enhanced</p>
 
-<h3>dropDownWillShow</h3>
+<h3><code>dropDownWillShow</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component whose menu will be shown</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component whose menu will be shown</p>
 
 <p>emitted when the component's menu is about to be shown</p>
 
-<h3>dropDownDidShow</h3>
+<h3><code>dropDownDidShow</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component whose menu was shown</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component whose menu was shown</p>
 
 <p>emitted when the component's menu is shown</p>
 
-<h3>dropDownWillHide</h3>
+<h3><code>dropDownWillHide</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component whose menu will be hidden</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component whose menu will be hidden</p>
 
 <p>emitted when the component's menu is about to be hidden</p>
 
-<h3>dropDownDidHide</h3>
+<h3><code>dropDownDidHide</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component whose menu was hidden</p>
-
-<h4>info</h4>
+<p><code>component</code> - the outermost element of the component whose menu was hidden</p>
 
 <p>emitted when the component's menu is hidden</p>
 
-<h3>dropDownDidSelect</h3>
+<h3><code>dropDownDidSelect</code></h3>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
-<p><strong>component</strong> - the outermost element of the component whose menu was hidden</p>
+<p><code>component</code> - the outermost element of the component whose menu was hidden</p>
 
-<p><strong>selected</strong> - the component's menu item element that was selected</p>
-
-<h4>info</h4>
+<p><code>selected</code> - the component's menu item element that was selected</p>
 
 <p>emitted when one of the component's menu items is selected</p>
 
-<h4>event.detail</h4>
+<h4><code>event.detail</code></h4>
 
 <h2>API Events</h2>
 
@@ -138,7 +346,7 @@ component.dispatchEvent(apiEvent);
 
 <p>The second argument to CustomEvent may be omitted entirely in cases where no additional information is needed beyond the API directive.</p>
 
-<h3>dropDownShow</h3>
+<h3><code>dropDownShow</code></h3>
 
 <p>Tells the drop-down to show its menu if it isn't already shown.</p>
 
@@ -147,7 +355,7 @@ var dropDownShowEvent = new window.CustomEvent('dropDownShow');
 component.dispatchEvent(dropDownShowEvent);
 </code></p>
 
-<h3>dropDownHide</h3>
+<h3><code>dropDownHide</code></h3>
 
 <p>Tells the drop-down to hide its menu if it isn't already hidden.</p>
 
@@ -156,7 +364,7 @@ var dropDownHideEvent = new window.CustomEvent('dropDownHide');
 component.dispatchEvent(dropDownHideEvent);
 </code></p>
 
-<h3>dropDownSelect</h3>
+<h3><code>dropDownSelect</code></h3>
 
 <p>Tells the drop-down to select the specified option. Works even if the drop=down's menu is hidden.</p>
 
@@ -170,4 +378,4 @@ var dropDownSelectEvent = new window.CustomEvent(
   }
 );
 component.dispatchEvent(dropDownSelectEvent);
-</code></p></article></body></html>
+</code></p><footer></footer></article><script src="../components.min.js"></script></body></html>

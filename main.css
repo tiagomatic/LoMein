@@ -12,21 +12,21 @@ aside {
   position: fixed;
   top: 70px;
   left: 0;
-  width: 260px;
+  width: 295px;
   background: #82ACC1;
   padding: 15px 0;
   overflow: scroll;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  aside h4 {
-    margin: 15px 0;
+  aside h5 {
     padding: 0 15px;
     color: #29506E; }
   aside ul {
     list-style: none;
     padding: 0;
-    line-height: 2.2em; }
+    line-height: 2.2em;
+    margin: 0; }
     aside ul li {
       padding: 0 15px; }
   aside a {
@@ -42,8 +42,11 @@ article {
   right: 0;
   top: 70px;
   bottom: 0;
-  left: 260px;
+  left: 295px;
   padding: 15px 20px; }
   article pre {
     white-space: pre-wrap;
     font-size: 0.9em; }
+
+footer {
+  height: 30px; }
