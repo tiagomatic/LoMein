@@ -542,6 +542,9 @@ h6 {
   font-size: 0.75em;
   /* 0.75*16 = 12 */ }
 
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0; }
+
 input {
   background-color: #ffffff;
   line-height: 1.53846;
