@@ -66,9 +66,13 @@ $(function() {
   else {
     var regex = new RegExp(path+'?$');
 
+    console.log(regex);
+
     $('aside a').each(function() {
       var $this = $(this),
           href  = $this.attr('href');
+
+      console.log(href);
 
       if(regex.test(href)) {
         $this.addClass('active');
