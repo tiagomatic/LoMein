@@ -474,7 +474,7 @@ button {
 
 .card {
   box-shadow: 1px 1px 5px #BEBEBE;
-  border-radius: 5px;
+  border-radius: 3px;
   margin-bottom: 1rem;
   padding: 1rem;
   background: #FFF; }
@@ -496,7 +496,7 @@ button {
     margin-top: 1em;
     margin-bottom: 0;
     padding: 0.5em 1em;
-    border-radius: 0 0 5px 5px; }
+    border-radius: 0 0 3px 3px; }
 
 .swatch-container {
   display: inline-block;
