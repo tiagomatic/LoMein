@@ -35,7 +35,7 @@ $(function() {
   onResize();
 
   // Active Link Selection
-  var path        = window.location.pathname.replace(/^\/Signal-UI/, ''),
+  var path        = window.location.pathname.replace(/^\/LoMein/, ''),
       $headings   = $('h2[id]'),
       $asideLinks = $('aside a');
 
@@ -50,7 +50,7 @@ $(function() {
             top   = $this.position().top;
 
         if(scrollTop > top) {
-          hash = $(this).attr('id');
+          hash = $this.attr('id');
         }
       });
 
